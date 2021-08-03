@@ -1,0 +1,34 @@
+.searchbar{
+    font-family: 'Roboto', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    input{
+        border-radius: var(--base-radius);
+        font-size: 1.25rem;
+    }
+    &_fields{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+    }
+    &_handlers{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 50px;
+    }
+    &_handler{
+        border: none;
+        border-radius: 20px;
+        padding: 1rem;
+    }
+}
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    flex-direction: row !important;
+    .css-2s9zix{
+        display: none !important;
+    }
+}

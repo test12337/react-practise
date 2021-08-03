@@ -1,0 +1,20 @@
+header{
+    font-family: 'Roboto', sans-serif !important;
+    background-color: #127bd1;
+    & .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navbar{
+        display: flex;
+        &_wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &_item{
+            color: #ffffff;
+        }
+    }
+}
