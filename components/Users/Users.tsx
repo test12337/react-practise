@@ -18,11 +18,10 @@ const Users: React.FC = () : JSX.Element => {
   }, []);
   const filterHandler = async (request : IFilter) : Promise<void> => {
     if(request){
-      const stringRequest = service.filterToRequest({...request, 
-        start_dt : request.start_dt ? request.start_dt + ' 00:00:00' : '', 
-        finish_dt : request.finish_dt ? request.finish_dt + ' 23:59:59' : ''
-      })
-      api.filterUsers(stringRequest)
+      const modifiedFilter = {...request};
+      'start_dt' in modifiedFilter ? modifiedFilter.start_dt += ' 00:00:00' : null;
+      'finish_dt' in modifiedFilter ? modifiedFilter.finish_dt += ' 23:59:59' : null;
+      api.filterUsers(service.filterToRequest(modifiedFilter))
       .then(filteredUsers => {
         localStorage.setItem('filterOptions', JSON.stringify(request));
         setUsers(filteredUsers);
@@ -47,7 +46,7 @@ const Users: React.FC = () : JSX.Element => {
           <div className="users_header_subtitle">Фильтр по отзывам за визиты</div>
         </div>
         <Searchbar 
-        baseInput={Object.keys(storageFilterOptions).length ? storageFilterOptions : {...UserTemplate, start_dt : '', finish_dt : ''}} 
+        baseInput={Object.keys(storageFilterOptions).length ? storageFilterOptions : {}} 
         filterHandler={filterHandler} 
         resetHandler={usersRequest}/>
         <Table data={users} history={history}/>

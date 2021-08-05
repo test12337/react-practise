@@ -2,7 +2,7 @@ import { UserType } from '../interfaces/interfaces';
 class apiWorker{
     baseDir : string;
     constructor(){
-        this.baseDir = 'http://localhost:8888/test-yii/basic/web/site';
+        this.baseDir = 'http://localhost:8888/api';
     }
     async getUsers() : Promise<[UserType]>{
         return await fetch(`${this.baseDir}/users`)

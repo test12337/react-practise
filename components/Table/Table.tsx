@@ -27,7 +27,7 @@ const Table: React.FC<TableProps> = ({data, history}) : JSX.Element => {
                   {
                     data.map(user => (<tr onClick={(e) => {
                     history.push(`/user/${user.id}`);
-                    }} key={user.id}>{Object.values(user).map((property, index) => <td>{index === usernameIndex ? <Link to={`/user/${user.id}`}>{property}</Link> : property}</td>)}</tr>))
+                    }} key={user.id}>{Object.values(user).map((property, index) => <td key={index}>{index === usernameIndex ? <Link to={`/user/${user.id}`}>{property}</Link> : property}</td>)}</tr>))
                   }
               </tbody>
           </table>

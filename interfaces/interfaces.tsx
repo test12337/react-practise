@@ -7,10 +7,10 @@ export interface UserType {
     datetime : string,
 }
 export interface IFilter {
-    id : string,
-    username : string,
-    start_dt : string,
-    finish_dt : string
+    id? : string,
+    username? : string,
+    start_dt? : string,
+    finish_dt? : string,
 }
 const UserTemplate = {
     id : '', 
@@ -19,6 +19,7 @@ const UserTemplate = {
     auth_key : '', 
     access_token : '', 
     datetime : '',
+    
 }
 
 export { UserTemplate };

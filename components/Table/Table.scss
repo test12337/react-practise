@@ -1,10 +1,11 @@
-
 .users_table{
     font-family: "Roboto", sans-serif;
     margin-top: 50px;
     table{
         table-layout: fixed;
         width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
     }
     tbody{
         cursor: pointer;
@@ -22,18 +23,6 @@
     }
     & tr:nth-child(odd){
         background-color: #e8e8e8;
-    }
-    & th:first-child{
-        border-top-left-radius: 10px; 
-    }
-    & th:last-child{
-        border-top-right-radius: 10px;
-    }
-    & tr:last-child td:first-child{
-        border-bottom-left-radius: 10px; 
-    }
-    & tr:last-child td:last-child{
-        border-bottom-right-radius: 10px; 
     }
 }
 .card {
